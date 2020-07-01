@@ -19,7 +19,7 @@ class GetDrugs {
     var response = await http.get(url, headers:header);
     Map mapResponse = json.decode(response.body);
 
-
+  
     if(response.statusCode == 200) {
       final drugs = List<Drug>();
       for (Map map in mapResponse["data"]){

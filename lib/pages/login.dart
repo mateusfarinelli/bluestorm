@@ -23,18 +23,18 @@ class LoginPage extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 25, vertical: 150),
         child: ListView(
           children: <Widget>[
-            textLoginField(
+            _textLoginField(
               "Username",
               "Username",
               controller: ctrUsername,
             ),
-            textLoginField(
+            _textLoginField(
               "Password",
               "Password",
               password: true,
               controller: ctrPassword,
             ),
-            raisedButton(
+            _raisedButton(
               "Login",
               Colors.lightBlue[900],
               context
@@ -44,7 +44,7 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
-  textLoginField(
+  _textLoginField(
     String label,
     String hint,{
       bool password = false,
@@ -61,7 +61,7 @@ class LoginPage extends StatelessWidget {
         ),
       );
     }
-  raisedButton(
+  _raisedButton(
     String text,
     Color color,
     BuildContext context
@@ -76,12 +76,12 @@ class LoginPage extends StatelessWidget {
         ),
       ),
       onPressed: () {
-        clickButton(context);
+        _clickButton(context);
       }
     );
   }
 
-  clickButton(BuildContext context) async {
+  _clickButton(BuildContext context) async {
     bool validForm = _formKey.currentState.validate();
 
     if(!validForm){
